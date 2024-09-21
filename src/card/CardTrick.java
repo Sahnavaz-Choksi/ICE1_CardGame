@@ -27,7 +27,6 @@ public class CardTrick {
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         }
         
-        //insert code to ask the user for Card value and suit, create their card
         Scanner input = new Scanner(System.in);
         System.out.print("\nEnter a card value (1-13): ");
         int userValue = input.nextInt();
@@ -39,9 +38,7 @@ public class CardTrick {
         Card userCard = new Card();
         userCard.setValue(userValue);
         userCard.setSuit(userSuit);
-        
-      
-        // and search magicHand here
+
         boolean found = false;
         for (Card card : magicHand) {
             if (card.getValue() == userCard.getValue() && card.getSuit().equals(userCard.getSuit())) {
@@ -49,14 +46,10 @@ public class CardTrick {
                 break;
             }
         }
-
-        //Then report the result here
         if (found) {
             System.out.println("Your card is in the magic hand!");
         } else {
             System.out.println("Your card is not in the magic hand.");
         }
-        // add one luckcard hard code 2,clubs
     }
-    
 }
